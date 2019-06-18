@@ -1,5 +1,6 @@
 <template>
-    <button class="g-button">hi</button>
+<!--    //单组键模式-->
+    <button class="g-button">按钮</button>
 </template>
 <script>
     export default {}
@@ -15,15 +16,15 @@
 
     }
 
-    &:hover{
+    .g-button:hover{
         border-color: var(--border-color-hover);
     }
 
-    &:active{
+    .g-button:active{
         background-color: var(--button-active-bg);
     }
 
-    &:focus{
+    .g-button:focus{
         outline: none;
     }
 

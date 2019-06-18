@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kerowh/Vue-test/issues"
   },
-  "homepage": "https://github.com/kerowh/Vue-test#readme"
+  "homepage": "https://github.com/kerowh/Vue-test#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }

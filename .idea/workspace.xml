@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb0b3b62-8351-47fd-ad9c-6426d8baf3e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/button.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/button.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+            <state relative-caret-position="312">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -128,7 +126,7 @@
       <workItem from="1560825554505" duration="7109000" />
       <workItem from="1560839613256" duration="2951000" />
       <workItem from="1560846111840" duration="7737000" />
-      <workItem from="1560908034158" duration="4435000" />
+      <workItem from="1560908034158" duration="5296000" />
     </task>
     <task id="LOCAL-00001" summary="npm install vue">
       <created>1560826283104</created>
@@ -158,14 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560846389492</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加icon和iconPosition属性">
+      <created>1560912673524</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560912673524</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22232000" />
+    <option name="totallyTimeSpent" value="23093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="597" y="0" width="1400" height="780" extended-state="0" />
+    <frame x="110" y="45" width="1400" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15395895" />
@@ -217,7 +222,8 @@
     <MESSAGE value="npm install vue" />
     <MESSAGE value="完成按钮基本样式" />
     <MESSAGE value="加入parcel和将button组建改为单文件组建。" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入parcel和将button组建改为单文件组建。" />
+    <MESSAGE value="添加icon和iconPosition属性" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加icon和iconPosition属性" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package-lock.json">
@@ -279,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/button.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+        <state relative-caret-position="312">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>

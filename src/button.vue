@@ -1,31 +1,1 @@
-<template>
-<!--    //单组键模式-->
-    <button class="g-button">按钮</button>
-</template>
-<script>
-    export default {}
-</script>
-<style lang="scss">
-    .g-button{
-        font-size: var(--font-size);
-        height: var(--button-height);
-        padding: 0 1em;
-        border-radius: var(--border-radius);
-        background: var(--button-bg);
-        border: 1px solid var(--border-color);
-
-    }
-
-    .g-button:hover{
-        border-color: var(--border-color-hover);
-    }
-
-    .g-button:active{
-        background-color: var(--button-active-bg);
-    }
-
-    .g-button:focus{
-        outline: none;
-    }
-
-</style>
+<template>    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">        <!--        如果有icon就给你传入图标，没有就不传-->        <svg v-if="icon" class="icon">            <use :xlink:href="`#i-${icon}`"></use>        </svg>        <div class="content">            <slot></slot>        </div>    </button></template><script>    export default {        props: ['icon', 'iconPosition']    }</script><style lang="scss">    .g-button {        font-size: var(--font-size);        height: var(--button-height);        padding: 0 1em;        border-radius: var(--border-radius);        background: var(--button-bg);        border: 1px solid var(--border-color);        display: inline-flex;        justify-content: center;        align-items: center;        vertical-align: middle;    }    > .icon {        order: 1;        margin-right: .1em;    }    > .content {        order: 2    }    .g-button:hover {        border-color: var(--border-color-hover);    }    .g-button:active {        background-color: var(--button-active-bg);    }    .g-button:focus {        outline: none;    }    .g-button.icon-right {        > .icon {            order: 2;            margin-right: 0px;            margin-left: .1em;        }        > .content {            order: 1;        }    }</style>

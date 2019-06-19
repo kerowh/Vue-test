@@ -5,6 +5,9 @@
 </template>
 <script>
     export default {
+        // mounted(){}是只有在我们要加的标签存在时才会调用的函数
+        //这里我们使用mounted函数来检测这个vue实例是否是button标签
+        //$el是vue特有的标签，只能用来查找vue实例的根标签。
         mounted() {
             for (let node of this.$el.children){
                 let name = node.nodeName.toLowerCase()
@@ -21,8 +24,11 @@
         vertical-align: middle;
         >.g-button{
             border-radius: 0;
-            margin-left: -1px;
         }
+    }
+
+    .g-button-group>.g-button:not(:first-child){
+        margin-left: -1px;
     }
 
     .g-button-group>.g-button:first-child{
@@ -38,5 +44,4 @@
         position: relative;
         z-index: 1;
     }
-
 </style>

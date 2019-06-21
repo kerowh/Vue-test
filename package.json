@@ -1,8 +1,8 @@
 {
-  "name": "vue-gulu",
+  "name": "vue-gulu-wanghai",
   "description": "作者：我",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.2",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"

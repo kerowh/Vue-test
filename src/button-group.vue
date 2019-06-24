@@ -5,6 +5,7 @@
 </template>
 <script>
     export default {
+        name:'Gulu-button-group',
         // mounted(){}是只有在我们要加的标签存在时才会调用的函数
         //这里我们使用mounted函数来检测这个vue实例是否是button标签
         //$el是vue特有的标签，只能用来查找vue实例的根标签。
@@ -18,7 +19,7 @@
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .g-button-group{
         display: inline-flex;
         vertical-align: middle;

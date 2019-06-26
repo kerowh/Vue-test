@@ -99,7 +99,7 @@ describe('Input', () => {
                 inputElement.dispatchEvent(event)
                 //还需要预测传入的第一个参数是不是event，使用calledWith
                 //这里是通过查询chai-sinon的api解决的.
-                expect(callback).to.have.been.calledWith(hi)
+                expect(callback).to.have.been.calledWith('hi')
             })
         })
         // it('支持input事件',()=>{

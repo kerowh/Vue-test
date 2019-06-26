@@ -6,7 +6,6 @@
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
-
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

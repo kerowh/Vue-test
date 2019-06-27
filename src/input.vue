@@ -103,7 +103,7 @@
         fill: $red;
     }
 
-    .error-message{
+    .errorMessage{
         color: $red;
     }
 </style>

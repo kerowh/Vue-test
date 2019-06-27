@@ -9,6 +9,9 @@
             gutter:{
                 type:[Number,String]
             },
+            //这里是为了给row加上align属性
+            //加上这个属性之后，决定了其中的列是再左侧还是在右侧
+            //具体的做法其实是加css样式
             align:{
                 type:String,
                 validator(value){
@@ -34,7 +37,6 @@
                     marginRight:-gutter/2+'px'}
             },
             rowClass(){
-
                 let {align} = this
                 return [align && `align-${align}`]
             }
@@ -44,15 +46,18 @@
 <style scoped lang="scss">
     .row{
         display: flex;
-        .row.align-left{
-            justify-content: flex-start;
-        }
-        .row.align-right{
-            justify-content: flex-end;
-        }.row.align-center{
-             justify-content: center;
-         }
+         /*默认可以换行*/
+        flex-wrap: wrap;
     }
+    /*其实就是加上flex的样式*/
+    .row.align-left{
+        justify-content: flex-start;
+    }
+    .row.align-right{
+        justify-content: flex-end;
+    }.row.align-center{
+        justify-content: center;
+     }
 
 
 </style>

@@ -15,7 +15,8 @@
             },
             offset:{
                 type: [Number,String]
-            }
+            },
+
         },
         data(){
             return{

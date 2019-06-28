@@ -46,7 +46,7 @@
 <style scoped lang="scss">
     .row{
         display: flex;
-         /*默认可以换行*/
+        /*默认可以换行*/
         flex-wrap: wrap;
     }
     /*其实就是加上flex的样式*/
@@ -56,8 +56,6 @@
     .row.align-right{
         justify-content: flex-end;
     }.row.align-center{
-        justify-content: center;
+         justify-content: center;
      }
-
-
 </style>

@@ -71,6 +71,21 @@
                 gutter:0
             }
         },
+        methods:{
+          createClasses(obj,str=''){
+              if (!obj){
+                  return []
+              }
+              let array = []
+              if (obj.span){
+                  array.push(`col-${str}${obj.span}`)
+              }
+              if (obj.offset){
+                  array.push(`col-${str}${obj.offset}`)
+              }
+              return array
+          }
+        },
         computed:{
             colStyle(){
                 let {gutter} = this
@@ -78,20 +93,28 @@
             },
             colClass(){
                 let {span,offset,ipad,narrowPc,pc,widePc} = this
+                let createClasses = this.createClasses
+                return [
+                    ...createClasses(span,offset),
+                    ...createClasses(ipad,'ipad-'),
+                    ...createClasses(narrowPc,'narrow-pc-'),
+                    ...createClasses(pc,'pc-'),
+                    ...createClasses(widePc,'wide-pc-'),
+                ]
                 // let phoneClass=[]
                 // if (phone){
                 //     phoneClass = [`col-phone-${phone.span}`]
                 // }
                 //&&如果有就是什么什么
                 //记住class永远永远写成class={[`...`]}的形式
-                return [span && `col-${span}`,
-                    offset && `offset-${offset}`,
-                    // ...(phone?[`col-phone-${phone.span}`] :[]),
-                    ...(ipad ?[`col-ipad-${ipad.span}`]:[]),
-                    ...(narrowPc ?[`col-narrow-pc-${narrowPc.span}`]:[]),
-                    ...(pc ?[`col-pc-${pc.span}`]:[]),
-                    ...(widePc ?[`col-wide-pc-${widePc.span}`]:[]),
-                ]
+                // return [span && `col-${span}`,
+                //     offset && `offset-${offset}`,
+                //     // ...(phone?[`col-phone-${phone.span}`] :[]),
+                //     ...(ipad ?[`col-ipad-${ipad.span}`]:[]),
+                //     ...(narrowPc ?[`col-narrow-pc-${narrowPc.span}`]:[]),
+                //     ...(pc ?[`col-pc-${pc.span}`]:[]),
+                //     ...(widePc ?[`col-wide-pc-${widePc.span}`]:[]),
+                // ]
             }
         }
     }

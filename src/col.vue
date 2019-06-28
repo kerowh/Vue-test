@@ -81,7 +81,7 @@
                   array.push(`col-${str}${obj.span}`)
               }
               if (obj.offset){
-                  array.push(`col-${str}${obj.offset}`)
+                  array.push(`offset-${str}${obj.offset}`)
               }
               return array
           }
@@ -95,7 +95,8 @@
                 let {span,offset,ipad,narrowPc,pc,widePc} = this
                 let createClasses = this.createClasses
                 return [
-                    ...createClasses(span,offset),
+                    span&& `col-${span}`,
+                    offset&&`offset-${offset}`,
                     ...createClasses(ipad,'ipad-'),
                     ...createClasses(narrowPc,'narrow-pc-'),
                     ...createClasses(pc,'pc-'),

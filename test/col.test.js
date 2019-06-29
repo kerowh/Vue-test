@@ -40,7 +40,7 @@ describe('Button', () => {
         vm.$destroy()
     })
 
-    it('存在pc属性', () => {
+    it('存在ipad属性', () => {
         const div = document.createElement('div')
         document.body.appendChild(div)
         const Constructor = Vue.extend(Col)

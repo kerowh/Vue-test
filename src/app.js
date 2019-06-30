@@ -40,7 +40,16 @@ new Vue ({
 
     methods:{
         showToast(){
-            this.$toast('我是message')
+            this.$toast('很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多',{
+                closeButton:{
+                    text:'知道了',
+                    callback(toasts){
+                        toasts.log()
+                        console.log('用户说他知道了')
+                    }
+                },
+                enableHtml: false
+            })
         }
     },
 })

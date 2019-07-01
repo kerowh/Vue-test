@@ -8,7 +8,7 @@
             <div class="line" ref="line"></div>
             <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
-        </span>
+            </span>
         </div>
     </div>
 </template>
@@ -69,6 +69,7 @@
             close(){
                 this.$el.remove()
                 // 加上这一句是因为destory不会默认删掉自己
+                //这其实也是个回调函数，触发一个叫做close的事件（在plugin中，并且绑定了一个叫做onclickclose的事件）
                 this.$emit('close')
                 this.$destroy
             },
@@ -77,8 +78,9 @@
             },
             onClickClose(){
                 this.close()
-                if (this.closeButton && typeof this.closeButton.callback ==='function')
-                this.closeButton.callback(this)
+                if (this.closeButton && typeof this.closeButton.callback ==='function'){
+                    this.closeButton.callback(this)
+                }
             }
         }
     }

@@ -64,6 +64,8 @@
                 },this.autoCloseDelay*1000)
             },
             close(){
+                console.log('测试');
+                this.$emit('close')
                 this.$el.remove()
                 // 加上这一句是因为destory不会默认删掉自己
                 this.$destroy

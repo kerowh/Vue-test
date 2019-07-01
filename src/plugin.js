@@ -18,7 +18,13 @@ export default {
             if (currentToast){
                 currentToast.close()
             }
-            currentToast =  createToast({Vue,message,propsDate:toastoptions})
+            currentToast =  createToast({Vue,
+                message,
+                propsDate:toastoptions,
+                onClose:()=>{
+                    currentToast = null
+                }
+            })
         }
     }
 }
@@ -29,7 +35,7 @@ export default {
 
 
 
-function createToast({Vue,message,propsDate}){
+function createToast({Vue,message,propsDate,onClose}){
     let Constructor = Vue.extend(Toast)
     let toast = new Constructor(
         /*读传入的propsDate*/
@@ -39,6 +45,7 @@ function createToast({Vue,message,propsDate}){
         // {propsData: toastoptions}
     )
     toast.$slots.default = [message]
+    toast.$on('close',onClose)
     toast.$mount()
     document.body.appendChild(toast.$el)
     return toast

@@ -1,5 +1,5 @@
 <template>
-    <div class="toast" ref="wrapper">
+    <div class="toast" ref="wrapper" :class="toastClasses">
         <div class="message">
             <slot v-if="!enableHtml"></slot>
             <div v-else v-html="$slots.default[0]"></div>
@@ -34,11 +34,23 @@
             enableHtml:{
                 type:Boolean,
                 default:false
+            },
+            position:{
+                type:String,
+                default:'top',
+                validator(value){
+                    return ['top','center','bottom'].indexOf(value)>=0
+                }
             }
         },
         mounted() {
             this.updateStyles()
             this.exeAutoClose()
+        },
+        computed:{
+            toastClasses(){
+                return{[`position-${this.position}`]:true}
+            }
         },
         methods:{
             updateStyles(){
@@ -73,10 +85,11 @@
     $toast-bg:rgba(0,0,0,0.75);
     .toast{
         position: fixed;
-        top: 0;
+        /*因为加样式了，这行先不要了*/
+        /*top: 0;*/
         left: 50%;
         /*注意这样写不在中间*/
-        transform: translateX(-50%);
+        /*注意transform只生效一次，所以写在样式里，这个css的目的是为了居中*/
         /*这才是中间*/
         font-size: $font-size;
         line-height: 1.8;
@@ -105,5 +118,19 @@
     }
     .message{
         padding: 8px;
+    }
+
+    .toast.position-top{
+        top:0;
+        transform: translateX(-50%);
+    }
+    .toast.position-bottom{
+        bottom:0;
+        transform: translateX(-50%);
+    }
+
+    .toast.position-center {
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 </style>

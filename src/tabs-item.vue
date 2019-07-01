@@ -1,5 +1,5 @@
 <template>
-    <div class="tags-item" @click="xxx">
+    <div class="tags-item" @click="xxx" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -17,10 +17,23 @@
                 required:true
             }
         },
+        data(){
+            return {
+                active:false
+            }
+        },
         created() {
             this.eventBus.$on('update:selected',(name)=>{
-                console.log(name);
+                this.active = name === this.name;
+
             })
+        },
+        computed:{
+            classes(){
+                return{
+                    active:this.active
+                }
+            }
         },
         methods:{
             xxx(){
@@ -31,5 +44,12 @@
     }
 </script>
 <style lang="scss" scoped>
-    .tags-item{}
+    .tags-item{
+        flex-shrink: 0;
+        padding: 0 2em;
+    }
+    .tags-item.active{
+        background: red;
+    }
+
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div class="tags">
+        <slot name="actions"></slot>
         <slot></slot>
     </div>
 </template>
@@ -20,8 +21,8 @@
                 }
             }
         },
-        created() {
-            // this.$emit('update:selected','xxx')
+        mounted() {
+            this.eventBus.$emit('update:selected',this.selected)
         },
         data(){
             return{

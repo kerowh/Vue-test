@@ -1,5 +1,5 @@
 <template>
-    <div class="tags-pane" @click="xxx">
+    <div class="tags-pane" @click="xxx" :class="classes" v-if="active">
         <slot></slot>
     </div>
 </template>
@@ -13,10 +13,22 @@
                 required:true
             }
         },
+        data(){
+            return {
+                active:false
+            }
+        },
         created() {
             this.eventBus.$on('update:selected',(name)=>{
-                console.log(name);
+                this.active = name === this.name;
             })
+        },
+        computed:{
+            classes(){
+                return{
+                    active:this.active
+                }
+            }
         },
         methods:{
             xxx(){
@@ -26,5 +38,10 @@
     }
 </script>
 <style lang="scss" scoped>
-    .tags-pane{}
+    .tags-pane{
+
+    }
+    .tags-pane.active{
+        background: red;
+    }
 </style>

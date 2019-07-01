@@ -48,6 +48,7 @@ new Vue ({
                         console.log('用户说他知道了')
                     }
                 },
+                autoClose:3,
                 position:'center',
                 enableHtml: true
             })

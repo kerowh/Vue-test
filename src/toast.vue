@@ -17,12 +17,11 @@
         name:'GuluToast',
         props:{
             autoClose:{
-               type:Boolean,
-               default:true
-            },
-            autoCloseDelay:{
-                type: Number,
-                default: 15
+               type:[Boolean,Number],
+               default:5,
+               validator(value) {
+                   return value === false || typeof value === 'number';
+               }
             },
             closeButton:{
                 type:Object,
@@ -61,15 +60,16 @@
                 })
             },
             exeAutoClose(){
-                setTimeout(()=>{
-                    this.close()
-                },this.autoCloseDelay*1000)
+                if (this.autoClose){
+                    setTimeout(()=>{
+                        this.close()
+                    },this.autoClose*1000)
+                }
             },
             close(){
-                console.log('测试');
-                // this.$emit('close')
                 this.$el.remove()
                 // 加上这一句是因为destory不会默认删掉自己
+                this.$emit('close')
                 this.$destroy
             },
             log(){

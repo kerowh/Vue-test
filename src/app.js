@@ -40,7 +40,7 @@ new Vue ({
 
     methods:{
         showToast(){
-            this.$toast('很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多',{
+            this.$toast('<a href="www.baidu.com">baidu</a>',{
                 closeButton:{
                     text:'知道了',
                     callback(toasts){
@@ -48,8 +48,8 @@ new Vue ({
                         console.log('用户说他知道了')
                     }
                 },
-                // position:'',
-                enableHtml: false
+                position:'center',
+                enableHtml: true
             })
         }
     },

@@ -20,29 +20,22 @@ export default {
             }
             currentToast =  createToast({Vue,
                 message,
-                propsDate:toastoptions,
+                toastoptions,
                 onClose:()=>{
                     currentToast = null
                 }
             })
         }
+
     }
 }
 
 
-
 /*help function*/
-
-
-
-function createToast({Vue,message,propsDate,onClose}){
+function createToast({Vue,message,toastoptions,onClose}){
     let Constructor = Vue.extend(Toast)
     let toast = new Constructor(
-        /*读传入的propsDate*/
-        // { propsDate:propsDate}
-        /*两边一样的可以简写*/
-        {propsDate}
-        // {propsData: toastoptions}
+        {propsData: toastoptions}
     )
     toast.$slots.default = [message]
     toast.$on('close',onClose)

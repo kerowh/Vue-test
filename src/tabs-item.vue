@@ -47,6 +47,12 @@
     .tags-item{
         flex-shrink: 0;
         padding: 0 2em;
+        /*更改鼠标的样式*/
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
     }
     .tags-item.active{
         background: red;

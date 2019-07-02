@@ -25,7 +25,6 @@
         created() {
             this.eventBus.$on('update:selected',(name)=>{
                 this.active = name === this.name;
-
             })
         },
         computed:{
@@ -44,6 +43,7 @@
     }
 </script>
 <style lang="scss" scoped>
+    $blue:blue;
     .tags-item{
         flex-shrink: 0;
         padding: 0 2em;
@@ -56,6 +56,8 @@
     }
     .tags-item.active{
         background: red;
+        color:$blue ;
+        font-weight: bold;
     }
 
 </style>

@@ -22,7 +22,25 @@
             }
         },
         mounted() {
-            this.eventBus.$emit('update:selected',this.selected)
+            /*目标是获取到item的位置，来写下方线的动画*/
+            /*item是tabs的儿子，tabs的孙子
+            * 所以我们要一层一层找起
+            * 找到它之后，我们要找它的位置，所以先把它作为一个实例对象用
+            * emit传过去*/
+
+            this.$children.forEach((vm)=>{
+                if (vm.$options.name ==='GuluTagsHead'){
+                    vm.$children.forEach((item)=>{
+                        if (item.$options.name==='GuluTagsItem' && item.name === this.selected){
+                            console.log(item.name);
+                            console.log(item.$el);
+                            this.eventBus.$emit('update:selected',this.selected,item)
+                        }
+                    })
+                }
+
+            })
+
         },
         data(){
             return{

@@ -39,9 +39,8 @@
 </script>
 <style lang="scss" scoped>
     .tags-pane{
-
+        padding: 1em;
     }
     .tags-pane.active{
-        background: red;
     }
 </style>

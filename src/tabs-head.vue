@@ -11,11 +11,12 @@
     export default {
         name:'GuluTagsHead',
         inject:['eventBus'],
-        created() {
+        mounted() {
             this.eventBus.$on('update:selected',(item,vm)=>{
-                let{width,height}=vm.$el.getBoundingClientRect()
-                console.log(width);
-                console.log(height);
+                let{width,height,top,left}=vm.$el.getBoundingClientRect()
+                console.log(width,height,top,left);
+                this.$refs.line.style.width=`${width}px`
+                this.$refs.line.style.left=`${left}px`
             })
         }
     }
@@ -27,18 +28,20 @@
         display: flex;
         height:$tab-height;
         justify-content: flex-start;
-        align-items: center;
         border: 1px solid red;
         position: relative;
         >.line{
             position: absolute;
             bottom: 0;
-            border-bottom:1px solid $blue;
-            width: 100px;
+            border-bottom:3px solid $blue;
+            transition: all 350ms;
         }
         >.actions-wrapper{
             /*这个可以让元素往右，记住就行*/
             margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 </style>

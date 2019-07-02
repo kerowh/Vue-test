@@ -85,7 +85,7 @@
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     $font-size:14px;
     $toast-min-height:40px;
     $toast-bg:rgba(0,0,0,0.75);

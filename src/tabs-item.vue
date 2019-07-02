@@ -1,5 +1,5 @@
 <template>
-    <div class="tags-item" @click="xxx" :class="classes">
+    <div class="tags-item" @click="onClick" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -30,13 +30,17 @@
         computed:{
             classes(){
                 return{
-                    active:this.active
+                    active:this.active,
+                    disabled: this.disabled
                 }
             }
         },
         methods:{
-            xxx(){
+            onClick(){
                 /*当你点击了，更新this.name和vm实例*/
+                if (this.disabled){
+                    return
+                }
                 this.eventBus.$emit('update:selected',this.name,this)
             }
         }
@@ -44,6 +48,7 @@
 </script>
 <style lang="scss" scoped>
     $blue:blue;
+    $disabled-text-color:grey;
     .tags-item{
         flex-shrink: 0;
         padding: 0 1em;
@@ -56,6 +61,11 @@
     }
     .tags-item.active{
         color:$blue ;
+        font-weight: bold;
+    }
+
+    .tags-item.disabled{
+        color:$disabled-text-color;
         font-weight: bold;
     }
 

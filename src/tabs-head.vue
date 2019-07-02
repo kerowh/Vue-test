@@ -13,8 +13,7 @@
         inject:['eventBus'],
         mounted() {
             this.eventBus.$on('update:selected',(item,vm)=>{
-                let{width,height,top,left}=vm.$el.getBoundingClientRect()
-                console.log(width,height,top,left);
+                let{width,left}=vm.$el.getBoundingClientRect()
                 this.$refs.line.style.width=`${width}px`
                 this.$refs.line.style.left=`${left}px`
             })
@@ -38,6 +37,7 @@
         }
         >.actions-wrapper{
             /*这个可以让元素往右，记住就行*/
+            flex-shrink: 0;
             margin-left: auto;
             display: flex;
             align-items: center;

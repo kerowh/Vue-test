@@ -32,8 +32,6 @@
                 if (vm.$options.name ==='GuluTagsHead'){
                     vm.$children.forEach((item)=>{
                         if (item.$options.name==='GuluTagsItem' && item.name === this.selected){
-                            console.log(item.name);
-                            console.log(item.$el);
                             this.eventBus.$emit('update:selected',this.selected,item)
                         }
                     })

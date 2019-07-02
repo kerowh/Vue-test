@@ -12,7 +12,11 @@
         name:'GuluTagsHead',
         inject:['eventBus'],
         created() {
-
+            this.eventBus.$on('update:selected',(item,vm)=>{
+                let{width,height}=vm.$el.getBoundingClientRect()
+                console.log(width);
+                console.log(height);
+            })
         }
     }
 </script>

@@ -36,8 +36,8 @@
         },
         methods:{
             xxx(){
-                /*当你点击了，更新this.name*/
-                this.eventBus.$emit('update:selected',this.name)
+                /*当你点击了，更新this.name和vm实例*/
+                this.eventBus.$emit('update:selected',this.name,this)
             }
         }
     }

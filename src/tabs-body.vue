@@ -8,6 +8,7 @@
         name:'GuluTagsBody',
         inject:['eventBus'],
         created() {
+
         }
     }
 </script>

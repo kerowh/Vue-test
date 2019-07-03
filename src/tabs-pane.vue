@@ -1,5 +1,5 @@
 <template>
-    <div class="tags-pane" @click="xxx" :class="classes" v-if="active">
+    <div class="tags-pane" @click="onClick" :class="classes" v-if="active">
         <slot></slot>
     </div>
 </template>
@@ -31,7 +31,7 @@
             }
         },
         methods:{
-            xxx(){
+            onClick(){
                 this.eventBus.$emit('update:selected',this.name)
             }
         }

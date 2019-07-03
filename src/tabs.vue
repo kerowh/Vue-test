@@ -27,11 +27,14 @@
             * 所以我们要一层一层找起
             * 找到它之后，我们要找它的位置，所以先把它作为一个实例对象用
             * emit传过去*/
-
+            if (this.$children.length === 0){
+                console && console.warn &&
+                console.warn('tabs的子组件只能是tabs-header和tabs-body，你没写子组件')
+            }
             this.$children.forEach((vm)=>{
                 if (vm.$options.name ==='GuluTagsHead'){
                     vm.$children.forEach((item)=>{
-                        if (item.$options.name==='GuluTagsItem' && item.name === this.selected){
+                        if (item.$options.name==='GuluTagsItem' && item.$props.name === this.selected){
                             this.eventBus.$emit('update:selected',this.selected,item)
                         }
                     })

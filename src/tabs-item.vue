@@ -1,5 +1,5 @@
 <template>
-    <div class="tags-item" @click="onClick" :class="classes">
+    <div class="tags-item" @click="onClick" :class="classes" :data-name="name">
         <slot></slot>
     </div>
 </template>
@@ -23,9 +23,11 @@
             }
         },
         created() {
-            this.eventBus.$on('update:selected',(name)=>{
-                this.active = name === this.name;
-            })
+            if (this.eventBus){
+                this.eventBus.$on('update:selected',(name)=>{
+                    this.active = name === this.name;
+                })
+            }
         },
         computed:{
             classes(){
@@ -41,7 +43,9 @@
                 if (this.disabled){
                     return
                 }
-                this.eventBus.$emit('update:selected',this.name,this)
+                this.eventBus && this.eventBus.$emit('update:selected',this.name,this)
+                /*这句话就是为了给外界穿一个emit事件，用来写测试用例的*/
+                this.$emit('click')
             }
         }
     }
@@ -67,6 +71,7 @@
     .tags-item.disabled{
         color:$disabled-text-color;
         font-weight: bold;
+        cursor: not-allowed;
     }
 
 </style>

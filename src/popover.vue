@@ -1,7 +1,7 @@
 <template>
-    <div class="popover" @click="xxx">
+    <div class="popover" @click.stop="xxx">
 <!--        因为slot不能加class，没法写css-->
-        <div class="content-wrapper" v-if="visible">
+        <div class="content-wrapper" v-if="visible" @click.stop>
             <slot name="content" ></slot>
         </div>
         <slot></slot>
@@ -12,13 +12,25 @@
     export default {
         name: "GuluPopover",
         data(){
-            return{
-                visible:false
-            }
+            return{visible:false}
         },
         methods:{
             xxx(){
-                this.visible =!this.visible
+                this.visible = !this.visible
+                console.log('切换visible');
+                console.log(this.visible);
+                if (this.visible === true){
+                    setTimeout(()=>{
+                        console.log('新增document click 监听器');
+                        let EventHandle = ()=>{
+                            console.log('点击body就关闭popover')
+                            this.visible = false
+                            console.log('删除监听器');
+                            document.removeEventListener('click',EventHandle)
+                        }
+                        document.addEventListener('click',EventHandle)
+                    },0)
+                }
             }
         }
     }
@@ -30,6 +42,7 @@
         /*行内对齐方式*/
         vertical-align: top;
         position: relative;
+
         .content-wrapper{
             position: absolute;
             bottom: 100%;

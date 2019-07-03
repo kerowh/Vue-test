@@ -17,8 +17,10 @@ import TabsBody from "./tabs-body"
 import TabsHead from "./tabs-head"
 import TabsItem from "./tabs-item"
 import TabsPane from "./tabs-pane"
+import Popover from "./popover"
 
 
+Vue.component('g-popover',Popover)
 Vue.component('g-tabs',Tabs)
 Vue.component('g-tabs-body',TabsBody)
 Vue.component('g-tabs-head',TabsHead)

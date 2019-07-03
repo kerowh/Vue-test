@@ -1,7 +1,7 @@
 <template>
-    <div class="popover" @click.stop="xxx">
+    <div class="popover" @click="onClick">
 <!--        因为slot不能加class，没法写css-->
-        <div ref="contentWrapper" class="content-wrapper" v-if="visible" @click.stop>
+        <div ref="contentWrapper" class="content-wrapper" v-show="visible">
             <slot name="content" ></slot>
         </div>
         <span ref="triggerWrapper">
@@ -17,21 +17,56 @@
             return{visible:false}
         },
         methods:{
-            xxx(){
-                this.visible = !this.visible
-                if (this.visible === true){
-                    setTimeout(()=>{
-                        document.body.appendChild(this.$refs.contentWrapper)
-                        let{left,top}=this.$refs.triggerWrapper.getBoundingClientRect()
-                        this.$refs.contentWrapper.style.left=left+'px'
-                        this.$refs.contentWrapper.style.top=top+'px'
-                        let EventHandle = ()=>{
-                            this.visible = false
-                            document.removeEventListener('click',EventHandle)
-                        }
-                        document.addEventListener('click',EventHandle)
-                    },0)
+            positionContent(){
+                document.body.appendChild(this.$refs.contentWrapper)
+                let{left,top}=this.$refs.triggerWrapper.getBoundingClientRect()
+                this.$refs.contentWrapper.style.left=left+window.scrollX+'px'
+                this.$refs.contentWrapper.style.top=top+window.scrollY+'px'
+            },
+            listenToDocument(){
+                let EventHandle = (event)=>{
+                    console.log(event.target);
+                    if (this.$refs.contentWrapper.contains(event.target)){
+
+                    }else {
+                        this.visible = false
+                        document.removeEventListener('click',EventHandle)
+                    }
                 }
+                document.addEventListener('click',EventHandle)
+            },
+            onShow(){
+                setTimeout(()=>{
+                    this.positionContent()
+                    this.listenToDocument()
+                },0)
+            },
+            onClick(event){
+                console.log(event.target);
+                if (this.$refs.triggerWrapper.contains(event.target)){
+                    console.log('点的是下面的');
+                    this.visible = !this.visible
+                     if (this.visible === true){
+                         this.onShow()
+                     }
+                }else {
+                    console.log('点的是上面');
+                }
+
+                // this.visible = !this.visible
+                // if (this.visible === true){
+                //     setTimeout(()=>{
+                //         document.body.appendChild(this.$refs.contentWrapper)
+                //         let{left,top}=this.$refs.triggerWrapper.getBoundingClientRect()
+                //         this.$refs.contentWrapper.style.left=left+window.scrollX+'px'
+                //         this.$refs.contentWrapper.style.top=top+window.scrollY+'px'
+                //         let EventHandle = ()=>{
+                //             this.visible = false
+                //             document.removeEventListener('click',EventHandle)
+                //         }
+                //         document.addEventListener('click',EventHandle)
+                //     },0)
+                // }
             }
         },
         mounted() {

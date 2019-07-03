@@ -1,10 +1,12 @@
 <template>
     <div class="popover" @click.stop="xxx">
 <!--        因为slot不能加class，没法写css-->
-        <div class="content-wrapper" v-if="visible" @click.stop>
+        <div ref="contentWrapper" class="content-wrapper" v-if="visible" @click.stop>
             <slot name="content" ></slot>
         </div>
-        <slot></slot>
+        <span ref="triggerWrapper">
+            <slot></slot>
+        </span>
     </div>
 </template>
 
@@ -17,21 +19,23 @@
         methods:{
             xxx(){
                 this.visible = !this.visible
-                console.log('切换visible');
-                console.log(this.visible);
                 if (this.visible === true){
                     setTimeout(()=>{
-                        console.log('新增document click 监听器');
+                        document.body.appendChild(this.$refs.contentWrapper)
+                        let{left,top}=this.$refs.triggerWrapper.getBoundingClientRect()
+                        this.$refs.contentWrapper.style.left=left+'px'
+                        this.$refs.contentWrapper.style.top=top+'px'
                         let EventHandle = ()=>{
-                            console.log('点击body就关闭popover')
                             this.visible = false
-                            console.log('删除监听器');
                             document.removeEventListener('click',EventHandle)
                         }
                         document.addEventListener('click',EventHandle)
                     },0)
                 }
             }
+        },
+        mounted() {
+            console.log(this.$refs.triggerWrapper);
         }
     }
 </script>
@@ -42,13 +46,12 @@
         /*行内对齐方式*/
         vertical-align: top;
         position: relative;
+    }
 
-        .content-wrapper{
-            position: absolute;
-            bottom: 100%;
-            left: 0;
-            border: 1px solid red;
-            box-shadow: 0 0 3px rgba(0,0,0,0.5);
-        }
+    .content-wrapper{
+        position: absolute;
+        border: 1px solid red;
+        box-shadow: 0 0 3px rgba(0,0,0,0.5);
+        transform: translateY(-100%);
     }
 </style>

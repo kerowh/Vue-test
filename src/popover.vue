@@ -1,7 +1,7 @@
 <template>
     <div class="popover" @click="onClick">
 <!--        因为slot不能加class，没法写css-->
-        <div ref="contentWrapper" class="content-wrapper" v-show="visible">
+        <div ref="contentWrapper" class="content-wrapper" v-if="visible">
             <slot name="content" ></slot>
         </div>
         <span ref="triggerWrapper">
@@ -24,16 +24,17 @@
                 this.$refs.contentWrapper.style.top=top+window.scrollY+'px'
             },
             listenToDocument(){
-                let EventHandle = (event)=>{
-                    console.log(event.target);
-                    if (this.$refs.contentWrapper.contains(event.target)){
-
+                let onClickDocunment = (event)=>{
+                    /*如果它存在并且内容一致才什么都不做*/
+                    //
+                    if (this.$refs.contentWrapper && this.$refs.contentWrapper.contains(event.target)){
+                        return
                     }else {
                         this.visible = false
-                        document.removeEventListener('click',EventHandle)
+                        document.removeEventListener('click',onClickDocunment)
                     }
                 }
-                document.addEventListener('click',EventHandle)
+                document.addEventListener('click',onClickDocunment)
             },
             onShow(){
                 setTimeout(()=>{
@@ -42,15 +43,14 @@
                 },0)
             },
             onClick(event){
-                console.log(event.target);
                 if (this.$refs.triggerWrapper.contains(event.target)){
-                    console.log('点的是下面的');
+                    // console.log('点的是按钮');
                     this.visible = !this.visible
                      if (this.visible === true){
                          this.onShow()
                      }
                 }else {
-                    console.log('点的是上面');
+                   return
                 }
 
                 // this.visible = !this.visible
@@ -70,7 +70,7 @@
             }
         },
         mounted() {
-            console.log(this.$refs.triggerWrapper);
+
         }
     }
 </script>

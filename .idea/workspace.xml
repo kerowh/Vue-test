@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb0b3b62-8351-47fd-ad9c-6426d8baf3e3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/popover.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/popover.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+            <state relative-caret-position="432">
+              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -44,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/popover.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+            <state relative-caret-position="485">
+              <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -122,8 +121,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
+    <option name="x" value="810" />
+    <option name="width" value="1118" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -216,21 +215,7 @@
       <workItem from="1562079143131" duration="5018000" />
       <workItem from="1562115404890" duration="28886000" />
       <workItem from="1562166355381" duration="5998000" />
-      <workItem from="1562203302952" duration="3726000" />
-    </task>
-    <task id="LOCAL-00002" summary="完成按钮基本样式">
-      <created>1560832062202</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1560832062202</updated>
-    </task>
-    <task id="LOCAL-00003" summary="完成按钮基本样式">
-      <created>1560840766261</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1560840766261</updated>
+      <workItem from="1562203302952" duration="13204000" />
     </task>
     <task id="LOCAL-00004" summary="加入parcel和将button组建改为单文件组建。">
       <created>1560846389492</created>
@@ -561,11 +546,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562171328508</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="添加默认样式">
+      <created>1562209051429</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1562209051430</updated>
+    </task>
+    <task id="LOCAL-00052" summary="四个方向的位置">
+      <created>1562217854206</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1562217854206</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218890000" />
+    <option name="totallyTimeSpent" value="228368000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -577,10 +576,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
+    <frame x="648" y="0" width="894" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16507001" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22432433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -601,7 +600,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16507001" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22432433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -666,8 +665,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加row和col的测试用例" />
-    <MESSAGE value="创建layout，header，content，footer，sider组件" />
     <MESSAGE value="基本组件完成" />
     <MESSAGE value="添加toast和plugin" />
     <MESSAGE value="实现用户通过点击来关闭的功能" />
@@ -691,7 +688,9 @@
     <MESSAGE value="简单解决了overflow：hidden的问题。和div出现的样式的问题" />
     <MESSAGE value="重构代码" />
     <MESSAGE value="功能方面基本完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="功能方面基本完成" />
+    <MESSAGE value="添加默认样式" />
+    <MESSAGE value="四个方向的位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="四个方向的位置" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/button.js" />
@@ -981,16 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1001,10 +990,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/popover.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        <state relative-caret-position="485">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>

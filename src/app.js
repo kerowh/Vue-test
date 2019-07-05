@@ -18,8 +18,12 @@ import TabsHead from "./tabs-head"
 import TabsItem from "./tabs-item"
 import TabsPane from "./tabs-pane"
 import Popover from "./popover"
+import Collapse from "./collapse"
+import CollapseItem from "./collapse-item"
 
 
+Vue.component('g-collapse',Collapse)
+Vue.component('g-collapse-item',CollapseItem)
 Vue.component('g-popover',Popover)
 Vue.component('g-tabs',Tabs)
 Vue.component('g-tabs-body',TabsBody)

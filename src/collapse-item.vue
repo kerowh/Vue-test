@@ -19,38 +19,36 @@
             name:{
                 type: String,
                 required:true
-            }
+            },
         },
 
         data(){
             return{
-                open:false
+                open:false,
             }
         },
         inject:['eventBus'],
         mounted(){
-            this.eventBus && this.eventBus.$on('update:selected',(name)=>{
-                if (name!==this.name){
-                    this.close()
+            /*儿子会监听eventbus，只要爸爸说要更新，那么他就会更新自己*/
+            /*儿子自身没有说过自己要更新自己，都是爸爸说要更新，才会去更新自己*/
+            this.eventBus && this.eventBus.$on('update:selected',(names)=>{
+                if (names.indexOf(this.name)>=0){
+                    this.open = true
                 }else{
-                    this.show()
+                    this.open = false
                 }
             })
         },
         methods:{
+            /*他只是触发了用户想要移除或者添加更新的一个意图*/
+            /*即使用户触发toggle事件，他也没有去触发open事件，而是等他爸爸说要去更新才回去更新自身的装态*/
             toggle(){
                 if (this.open){
-                    this.open=false
+                    this.eventBus && this.eventBus.$emit('update:removeSelected',this.name)
                 } else{
-                    this.eventBus && this.eventBus.$emit('update:selected',this.name)
+                    this.eventBus && this.eventBus.$emit('update:addSelected',this.name)
                 }
             },
-            close(){
-                this.open=false
-            },
-            show(){
-                this.open = true
-            }
         }
     }
 </script>

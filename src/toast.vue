@@ -18,7 +18,7 @@
         props:{
             autoClose:{
                type:[Boolean,Number],
-               default:5,
+               default:2,
                validator(value) {
                    return value === false || typeof value === 'number';
                }
@@ -122,6 +122,7 @@
             border-top-right-radius: 0px;
             animation: slide-down $animation-duration;
         }
+        z-index: 30;
     }
     .wrapper.position-bottom{
         bottom:0;

@@ -1,17 +1,16 @@
 <template>
-    <div class="tags-body">
-        <slot></slot>
-    </div>
+  <div class="tags-body">
+    <slot></slot>
+  </div>
 </template>
 <script>
-    export default {
-        name:'GuluTagsBody',
-        inject:['eventBus'],
-        created() {
-
-        }
+  export default {
+    name:'GuluTagsBody',
+    inject:['eventBus'],
+    created() {
     }
+  }
 </script>
 <style lang="scss" scoped>
-    .tags-body{}
+  .tags-body{}
 </style>

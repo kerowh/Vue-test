@@ -52,6 +52,7 @@ new Vue ({
         loading2:true,
         loading3:false,
         message:'hi',
+        selected:'1',
         selectedTab:['2']
     },
 

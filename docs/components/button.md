@@ -2,7 +2,13 @@
 title: Button
 ---
 # 按钮
+---
+### 预览
 
-使用方法
+<ClientOnly>
+  <button-demo></button-demo>
+</ClientOnly>
 
-<button-demo></button-demo>
+
+
+

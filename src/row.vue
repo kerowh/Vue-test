@@ -1,5 +1,5 @@
 <template>
-    <div class="row" :style="rowStyle" :class="rowClass">
+    <div class="row" :style="rowStyle" :class="rowClass" style="padding: 10px">
         <slot></slot>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="tags-head">
     <slot></slot>
-<!--    <div class="line" ref="line"></div>-->
+    <div class="line" ref="line"></div>
     <div class="actions-wrapper">
       <slot name="actions" class="actions"></slot>
     </div>
@@ -13,10 +13,10 @@
     inject:['eventBus'],
     mounted() {
       this.eventBus.$on('update:selected',(item,vm)=>{
-        let{width,left,height,top}=vm.$el.getBoundingClientRect()
-        console.log(vm.$el.getBoundingClientRect().left);
-        // this.$refs.line.style.width=`${width}px`
-        // this.$refs.line.style.left=`${left-100}px`
+        let{width}=vm.$el.getBoundingClientRect()
+        let left = vm.$el.offsetLeft
+        this.$refs.line.style.width=`${width}px`
+        this.$refs.line.style.left=`${left}px`
       })
     }
   }

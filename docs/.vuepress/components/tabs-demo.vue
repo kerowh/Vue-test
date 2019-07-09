@@ -1,6 +1,6 @@
 <template>
     <div>
-        <g-tabs selected="1">
+        <g-tabs :selected="selected">
             <g-tabs-head>
                 <g-tabs-item name="1">1</g-tabs-item>
                 <g-tabs-item name="2">2</g-tabs-item>
@@ -29,6 +29,7 @@
         },
         data () {
             return {
+                selected:'2',
                 content: `
                   data:{
                     selected: '1'

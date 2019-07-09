@@ -25,6 +25,7 @@ module.exports = {
           '/components/toast',
           '/components/popover',
           '/components/tabs',
+          '/components/collapse'
         ]
       },
 

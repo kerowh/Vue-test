@@ -53,7 +53,6 @@
                 <div class="demoCol">2</div>
             </g-col>
         </g-row>
-       <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

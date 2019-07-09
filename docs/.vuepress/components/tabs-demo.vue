@@ -10,7 +10,6 @@
                 <g-tabs-pane name="2">content 2</g-tabs-pane>
             </g-tabs-body>
         </g-tabs>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

@@ -4,7 +4,6 @@
         <g-input value="不可选中" disabled></g-input>
         <g-input value="只能读取" readonly>中文</g-input>
         <g-input value="这是个错误" error="这是个错误"></g-input>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

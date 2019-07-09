@@ -16,7 +16,6 @@
                 footer
             </g-footer>
         </g-layout>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

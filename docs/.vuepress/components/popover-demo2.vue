@@ -24,7 +24,6 @@
                 弹出内容
             </template>
         </g-popover>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

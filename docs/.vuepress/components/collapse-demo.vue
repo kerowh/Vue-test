@@ -5,7 +5,6 @@
             <g-collapse-item title="标题二" name="2">内容2</g-collapse-item>
             <g-collapse-item title="标题三" name="3">内容3</g-collapse-item>
         </g-collapse>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

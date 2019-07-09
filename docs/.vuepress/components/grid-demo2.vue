@@ -25,7 +25,7 @@
                 <div class="demoCol">6</div>
             </g-col>
         </g-row>
-       <code><pre>{{content}}</pre></code>
+
     </div>
 </template>
 <script>

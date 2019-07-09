@@ -5,7 +5,6 @@
             <g-content style="height: 100px; background:deepskyblue;">content</g-content>
             <g-footer style="height: 50px; background:lightskyblue;">footer</g-footer>
         </g-layout>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

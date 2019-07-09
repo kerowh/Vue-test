@@ -1,7 +1,6 @@
 <template>
     <div>
         <g-button @click="onClickButton">上方弹出</g-button>
-        <code><pre>{{content}}</pre></code>
     </div>
 </template>
 <script>

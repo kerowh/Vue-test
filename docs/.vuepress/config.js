@@ -1,5 +1,6 @@
 module.exports = {
   title: '轱辘UI',
+  base:'/Vue-test/',
   description: '一个好用的UI框架',
   themeConfig: {
     nav: [

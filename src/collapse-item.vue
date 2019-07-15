@@ -69,6 +69,7 @@
         >.content{
             padding:  8px;
         }
+        cursor: pointer;
     }
     .collapseItem:first-child{
         >.title{

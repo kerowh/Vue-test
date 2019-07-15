@@ -63,5 +63,6 @@
         border: 1px solid $grey;
         border-radius: $border-radius;
         overflow: hidden;
+        cursor: pointer;
     }
 </style>
